@@ -81,14 +81,7 @@ public class Exercises2 {
     */
 
     public List<List<Integer>> permute(int[] nums) {
-        List<List<Integer>> result = new ArrayList<>();
-        for (int i = 0; i < result.size(); i++) {
-            List<Integer> permutation = new ArrayList<>;
-            permutation.add(i,num);
-            result.add(permutation);
-        }
-        result = permutation;
-        return result;
+       
     }
 
     public static void main(String[] args) {
