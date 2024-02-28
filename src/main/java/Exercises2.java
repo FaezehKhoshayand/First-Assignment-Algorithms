@@ -14,7 +14,14 @@ public class Exercises2 {
     */
 
     public int[] twoSum(int[] nums, int target) {
-        // TODO
+        for (int i = 0; i < nums.length - 1; i++) {
+            for (int j = i + 1; j < nums.length; j++) {
+                if (nums[i] + nums[j] == target) {
+                    int[] result = {i,j};
+                    return result;
+                }
+            }
+        }
         return null;
     }
 
@@ -48,33 +55,40 @@ public class Exercises2 {
     Given a roman numeral, convert it to an integer.
     */
 
-    public int romanToInt(String s) {
-        Map<String, Integer> map = new HashMap<>();
-        map.put('I', 1);
-        map.put('V', 5);
-        map.put('X', 10);
-        map.put('L', 50);
-        map.put('C', 100);
-        map.put('D', 500);
-        map.put('M', 1000);
-        map.put('IV', 4);
-        map.put('IX', 9);
-        map.put('XL', 40);
-        map.put('XC', 90);
-        map.put('CD', 400);
-        map.put('CM', 900);
-        
+    public static int romanToInt(String s) {
+        Map<Character, Integer> dictionary = new HashMap<>();
+        dictionary.put('I', 1);
+        dictionary.put('V', 5);
+        dictionary.put('X', 10);
+        dictionary.put('L', 50);
+        dictionary.put('C', 100);
+        dictionary.put('D', 500);
+        dictionary.put('M', 1000);
+        int result = dictionary.get(s.charAt(s.length()-1));
+        for (int i = s.length() - 2; i >= 0; i--) {
+            if (dictionary.get(s.charAt(i)) < dictionary.get(s.charAt(i+1))) {
+                result -= dictionary.get(s.charAt(i));
+            }
+            else {
+                result += dictionary.get(s.charAt(i));
+            }
+        }
         return result;
     }
-
     /*
     Given an array nums of distinct integers, return all the possible permutations.
     You can return the answer in any order.
     */
 
     public List<List<Integer>> permute(int[] nums) {
-        // TODO
-        return null;
+        List<List<Integer>> result = new ArrayList<>();
+        for (int i = 0; i < result.size(); i++) {
+            List<Integer> permutation = new ArrayList<>;
+            permutation.add(i,num);
+            result.add(permutation);
+        }
+        result = permutation;
+        return result;
     }
 
     public static void main(String[] args) {
