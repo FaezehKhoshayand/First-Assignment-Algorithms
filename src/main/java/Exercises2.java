@@ -81,7 +81,7 @@ public class Exercises2 {
     */
 
     public List<List<Integer>> permute(int[] nums) {
-       
+       return null;
     }
 
     public static void main(String[] args) {
