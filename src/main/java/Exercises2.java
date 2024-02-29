@@ -80,8 +80,31 @@ public class Exercises2 {
     You can return the answer in any order.
     */
 
+    static List<List<Integer>> permutations = new ArrayList<>();
     public List<List<Integer>> permute(int[] nums) {
-       
+        permutations.clear();
+        permute2(nums,0);
+        return permutations;
+    }
+    private void permute2(int[] nums, int fix) {
+        if (fix == nums.length - 1) {
+            List<Integer> permutation = new ArrayList<>();
+            for (int i : nums) {
+                permutation.add(i);
+            }
+            permutations.add(permutation);
+            return;
+        }
+        for (int i = fix; i < nums.length; i++) {
+            swap(nums, i, fix);
+            permute2(nums, fix + 1);
+            swap(nums, i, fix);
+        }
+    }
+    public static void swap(int[] nums, int i, int fix) {
+        int temp = nums[i];
+        nums[i] = nums[fix];
+        nums[fix] = temp;
     }
 
     public static void main(String[] args) {
