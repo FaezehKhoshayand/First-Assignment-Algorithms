@@ -82,7 +82,7 @@ public class Exercises2 {
 
     static List<List<Integer>> permutations = new ArrayList<>();
     public List<List<Integer>> permute(int[] nums) {
-<<<<<<< HEAD
+
         permutations.clear();
         permute2(nums,0);
         return permutations;
@@ -106,9 +106,6 @@ public class Exercises2 {
         int temp = nums[i];
         nums[i] = nums[fix];
         nums[fix] = temp;
-=======
-       return null;
->>>>>>> 3b8ddf30cb9dfc6527899797838aef9d1b625cfa
     }
 
     public static void main(String[] args) {
